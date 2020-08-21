@@ -36,7 +36,7 @@
         "ipconfig_name": "ipconfig",
         "publicIPAddress": "public_ip",
         "nsg_name": "vm-nsg",
-        "applicationGateways_myAppGateway_name": "myAppGateway",
+        
         "vnet_prefix": "10.0.0.0/16",
         "Finet_subnet_prefix": "10.0.0.0/24"
        
