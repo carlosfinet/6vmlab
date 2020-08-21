@@ -84,7 +84,7 @@
             },
             "copy": {
                 "name": "publicip-loop",
-                "count": 3
+                "count": 6
             }
         },
         {
