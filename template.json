@@ -169,7 +169,7 @@
             },
             "copy": {
                 "name": "vm-loop",
-                "count": 6
+                "count": 2
             }
         },
         {
@@ -335,7 +335,7 @@
             },
             "copy": {
                 "name": "int-loop",
-                "count": 2
+                "count": 6
             }
         }
     ]
