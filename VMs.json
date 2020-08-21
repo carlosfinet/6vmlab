@@ -5,20 +5,20 @@
         "adminUsername": {
             "type": "string",
             "metadata": {
-               "description": "Informe o nome de usuario para acesso as VMs"
+               "description": "Admin username for the backend servers"
              }
         },
         "adminPassword": {
             "type": "securestring",
             "metadata": {
-               "description": "Informe a senha para acessar as VMs"
+               "description": "Password for the admin account on the backend servers"
             }
         },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]",
             "metadata": {
-                "description": "Região para todos os recursos"
+                "description": "Location for all resources."
             }
         },
         "vmSize": {
@@ -66,7 +66,7 @@
             },
             "copy": {
               "name": "nsg-loop",
-              "count": 6
+              "count": 2
             }            
         },
         {
@@ -169,7 +169,7 @@
             },
             "copy": {
               "name": "vm-loop",
-              "count": 6
+              "count": 2
             }
         },
         {
@@ -191,7 +191,7 @@
             },
             "copy": {
               "name": "ext-loop",
-              "count": 6
+              "count": 2
             }
         },
         {
