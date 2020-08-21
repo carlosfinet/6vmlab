@@ -196,7 +196,7 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('publicIPAddress'), copyIndex(1)))]",
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_myVNet_name'))]",
-                "[resourceId('Microsoft.Network/applicationGateways', variables('applicationGateways_myAppGateway_name'))]",
+              
                 "[resourceId('Microsoft.Network/networkSecurityGroups', concat(variables('nsg_name'), copyIndex(1)))]"
             ],
             "properties": {
@@ -212,11 +212,8 @@
                                 "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworks_myVNet_name'), 'myBackendSubnet')]"
                             },
                             "primary": true,
-                            "privateIPAddressVersion": "IPv4",
-                            "applicationGatewayBackendAddressPools": [
-                                {
-                                    "id": "[resourceId('Microsoft.Network/applicationGateways/backendAddressPools', variables('applicationGateways_myAppGateway_name'), 'myBackendPool')]"
-                                }
+                            "privateIPAddressVersion": "IPv4"
+                            
                             ]
                         }
                     }
