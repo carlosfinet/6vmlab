@@ -214,7 +214,7 @@
                             "primary": true,
                             "privateIPAddressVersion": "IPv4"
                             
-                            ]
+				
                         }
                     }
                 ],
