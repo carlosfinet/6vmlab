@@ -36,10 +36,8 @@
         "ipconfig_name": "ipconfig",
         "publicIPAddress": "public_ip",
         "nsg_name": "vm-nsg",
-        
         "vnet_prefix": "10.0.0.0/16",
         "Finet_subnet_prefix": "10.0.0.0/24"
-       
     },
     "resources": [
         {
@@ -99,7 +97,6 @@
                     ]
                 },
                 "subnets": [
-                    
                     {
                         "name": "myBackendSubnet",
                         "properties": {
@@ -187,7 +184,6 @@
                 "count": 2
             }
         },
-        
         {
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2019-11-01",
@@ -196,7 +192,6 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('publicIPAddress'), copyIndex(1)))]",
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_myVNet_name'))]",
-              
                 "[resourceId('Microsoft.Network/networkSecurityGroups', concat(variables('nsg_name'), copyIndex(1)))]"
             ],
             "properties": {
@@ -213,8 +208,6 @@
                             },
                             "primary": true,
                             "privateIPAddressVersion": "IPv4"
-                            
-				
                         }
                     }
                 ],
