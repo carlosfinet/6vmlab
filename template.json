@@ -177,9 +177,9 @@
                 "typeHandlerVersion": "1.4",
                 "settings": {
                     "fileUris": [
-                        "https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1"
+                        "https://raw.githubusercontent.com/carlosfinet/AzureTemplates/master/IIS.ps1"
                     ],
-                    "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File appgatewayurl.ps1",
+                    "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File IIS.ps1",
                     "managedIdentity": {}
                 }
             },
