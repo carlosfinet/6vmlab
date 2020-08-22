@@ -64,7 +64,7 @@
             },
             "copy": {
                 "name": "nsg-loop",
-                "count": 4
+                "count": 1
             }
         },
         {
@@ -82,7 +82,7 @@
             },
             "copy": {
                 "name": "publicip-loop",
-                "count": 5
+                "count": 2
             }
         },
         {
@@ -159,7 +159,7 @@
             },
             "copy": {
                 "name": "vm-loop",
-                "count": 4
+                "count": 1
             }
         },
         {
@@ -176,12 +176,16 @@
                 "type": "CustomScriptExtension",
                 "typeHandlerVersion": "1.4",
                 "settings": {
-                    "commandToExecute": "powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1"
+                    ],
+                    "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File appgatewayurl.ps1",
+                    "managedIdentity": {}
                 }
             },
             "copy": {
                 "name": "ext-loop",
-                "count": 4
+                "count": 1
             }
         },
         {
@@ -219,7 +223,7 @@
             },
             "copy": {
                 "name": "int-loop",
-                "count": 4
+                "count": 1
             }
         }
     ]
