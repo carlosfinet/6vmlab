@@ -64,7 +64,7 @@
             },
             "copy": {
                 "name": "nsg-loop",
-                "count": 1
+                "count": 6
             }
         },
         {
@@ -82,7 +82,7 @@
             },
             "copy": {
                 "name": "publicip-loop",
-                "count": 2
+                "count": 7
             }
         },
         {
@@ -159,7 +159,7 @@
             },
             "copy": {
                 "name": "vm-loop",
-                "count": 1
+                "count": 6
             }
         },
         {
@@ -185,7 +185,7 @@
             },
             "copy": {
                 "name": "ext-loop",
-                "count": 1
+                "count": 6
             }
         },
         {
@@ -223,7 +223,7 @@
             },
             "copy": {
                 "name": "int-loop",
-                "count": 1
+                "count": 6
             }
         }
     ]
