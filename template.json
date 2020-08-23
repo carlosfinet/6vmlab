@@ -98,7 +98,7 @@
                 },
                 "subnets": [
                     {
-                        "name": "myBackendSubnet",
+                        "name": "FinetSubnet",
                         "properties": {
                             "addressPrefix": "[variables('Finet_subnet_prefix')]",
                             "privateEndpointNetworkPolicies": "Enabled",
@@ -208,7 +208,7 @@
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('publicIPAddress'), copyIndex(1)))]"
                             },
                             "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworks_myVNet_name'), 'myBackendSubnet')]"
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworks_myVNet_name'), 'FinetSubnet')]"
                             },
                             "primary": true,
                             "privateIPAddressVersion": "IPv4"
