@@ -30,7 +30,7 @@
         }
     },
     "variables": {
-        "virtualMachines_myVM_name": "myVM",
+        "virtualMachines_VM_name": "VM",
         "virtualNetworks_myVNet_name": "myVNet",
         "net_interface": "net-int",
         "ipconfig_name": "ipconfig",
@@ -113,7 +113,7 @@
         {
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2019-07-01",
-            "name": "[concat(variables('virtualMachines_myVM_name'), copyIndex(1))]",
+            "name": "[concat(variables('virtualMachines_VM_name'), copyIndex(1))]",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('net_interface'), copyIndex(1)))]"
@@ -140,7 +140,7 @@
                     }
                 },
                 "osProfile": {
-                    "computerName": "[concat(variables('virtualMachines_myVM_name'), copyIndex(1))]",
+                    "computerName": "[concat(variables('virtualMachines_VM_name'), copyIndex(1))]",
                     "adminUsername": "[parameters('adminUsername')]",
                     "adminPassword": "[parameters('adminPassword')]",
                     "windowsConfiguration": {
@@ -165,10 +165,10 @@
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "apiVersion": "2019-07-01",
-            "name": "[concat(variables('virtualMachines_myVM_name'), copyIndex(1),'/IIS')]",
+            "name": "[concat(variables('virtualMachines_VM_name'), copyIndex(1),'/IIS')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Compute/virtualMachines', concat(variables('virtualMachines_myVM_name'), copyIndex(1)))]"
+                "[resourceId('Microsoft.Compute/virtualMachines', concat(variables('virtualMachines_VM_name'), copyIndex(1)))]"
             ],
             "properties": {
                 "autoUpgradeMinorVersion": true,
