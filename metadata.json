@@ -1,0 +1,9 @@
+{
+    "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+    "type": "QuickStart",
+    "itemDisplayName": "Lab Virtual com 6 VMs",
+    "description": "Laboratorio virtual com 6 VMs",
+    "summary": "Treinamento",
+    "githubUsername": "rahulkhengare",
+    "dateUpdated": "2020-08-23"
+}
