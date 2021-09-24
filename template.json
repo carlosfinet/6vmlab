@@ -193,8 +193,9 @@
                             },
                             "primary": true,
                             "privateIPAddressVersion": "IPv4"
-                        }
+                        
                     }
+        
                 ],
                 "enableAcceleratedNetworking": false,
                 "enableIPForwarding": false,
