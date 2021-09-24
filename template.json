@@ -34,7 +34,6 @@
         "virtualNetworks_myVNet_name": "myVNet",
         "net_interface": "net-int",
         "ipconfig_name": "ipconfig",
-        "publicIPAddress": "public_ip",
         "nsg_name": "vm-nsg",
         "vnet_prefix": "10.0.0.0/16",
         "Finet_subnet_prefix": "10.0.0.0/24"
@@ -67,24 +66,7 @@
                 "count": 6
             }
         },
-        {
-            "type": "Microsoft.Network/publicIPAddresses",
-            "apiVersion": "2019-11-01",
-            "name": "[concat(variables('publicIPAddress'), copyIndex())]",
-            "location": "[parameters('location')]",
-            "sku": {
-                "name": "Standard"
-            },
-            "properties": {
-                "publicIPAddressVersion": "IPv4",
-                "publicIPAllocationMethod": "Static",
-                "idleTimeoutInMinutes": 4
-            },
-            "copy": {
-                "name": "publicip-loop",
-                "count": 7
-            }
-        },
+        
         {
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2019-11-01",
@@ -194,7 +176,7 @@
             "name": "[concat(variables('net_interface'), copyIndex(1))]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('publicIPAddress'), copyIndex(1)))]",
+               
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_myVNet_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', concat(variables('nsg_name'), copyIndex(1)))]"
             ],
@@ -203,9 +185,8 @@
                     {
                         "name": "[concat(variables('ipconfig_name'), copyIndex(1))]",
                         "properties": {
-                            "privateIPAllocationMethod": "Dynamic",
-                            "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('publicIPAddress'), copyIndex(1)))]"
+                            "privateIPAllocationMethod": "Dynamic"
+                           
                             },
                             "subnet": {
                                 "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworks_myVNet_name'), 'FinetSubnet')]"
